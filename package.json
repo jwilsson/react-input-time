@@ -21,9 +21,9 @@
     "coveralls": "^3.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
-    "eslint-config-jwilsson": "^2.8.3",
-    "jest": "^22.4.3",
+    "eslint": "^5.0.0",
+    "eslint-config-jwilsson": "^3.0.1",
+    "jest": "^23.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },

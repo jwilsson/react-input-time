@@ -1,11 +1,11 @@
 {
     "plugins": [
-        "transform-object-rest-spread"
+        "@babel/plugin-proposal-object-rest-spread"
     ],
     "presets": [
-        "react",
+        "@babel/preset-react",
         [
-            "env",
+            "@babel/preset-env",
             {
                 "targets": {
                     "browsers": [
@@ -17,9 +17,9 @@
     ],
     "env": {
         "test": {
-            "presets": [["env"], "react"],
+            "presets": [["@babel/preset-env"], "@babel/preset-react"],
             "plugins": [
-                "transform-object-rest-spread"
+                "@babel/plugin-proposal-object-rest-spread"
             ]
         }
     }

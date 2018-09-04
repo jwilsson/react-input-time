@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimeInput should pass on other props when using a custom input 1`] = `
+<div>
+  <input
+    name="foo"
+    type="time"
+    value="13:37"
+  />
+</div>
+`;
+
+exports[`TimeInput should pass on other props when using a default input 1`] = `
+<div>
+  <input
+    placeholder="HH:MM"
+    type="text"
+    value="13:37"
+  />
+</div>
+`;
+
+exports[`TimeInput should render a custom input with default props 1`] = `
+<div>
+  <input
+    type="time"
+    value="13:37"
+  />
+</div>
+`;
+
+exports[`TimeInput should render a text input with default props 1`] = `
+<div>
+  <input
+    type="text"
+    value="13:37"
+  />
+</div>
+`;

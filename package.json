@@ -18,14 +18,14 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "coveralls": "^3.0.2",
-    "enzyme": "^3.4.1",
-    "enzyme-adapter-react-16": "^1.2.0",
-    "eslint": "^5.3.0",
-    "eslint-config-jwilsson": "^3.2.0",
+    "eslint": "^5.5.0",
+    "eslint-config-jwilsson": "^3.3.0",
     "jest": "^23.5.0",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-testing-library": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^15.5.4 || ^16.1.1",

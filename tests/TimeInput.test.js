@@ -1,132 +1,96 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, fireEvent, render } from 'react-testing-library';
 
 import TimeInput from '../src/TimeInput';
 
-configure({
-    adapter: new Adapter(),
-});
+afterEach(cleanup);
+
+const setup = (props) => render(<TimeInput { ...props } />);
 
 describe('TimeInput', () => {
     it('should render a text input with default props', () => {
-        expect(shallow(<TimeInput initialTime="13:37" />).containsMatchingElement(<input type="text" />)).toBe(true);
+        const { container } = setup({
+            initialTime: '13:37',
+        });
+
+        expect(container).toMatchSnapshot();
     });
 
     it('should render a custom input with default props', () => {
         const custom = <input type="time" />;
-        const component = (
-            <TimeInput
-                input={ custom }
-                initialTime="13:37"
-            />
-        );
+        const { container } = setup({
+            initialTime: '13:37',
+            input: custom,
+        });
 
-        expect(shallow(component).containsMatchingElement(custom)).toBe(true);
+        expect(container).toMatchSnapshot();
     });
 
-    it('should render a passed "initialTime" prop', () => {
-        const component = <TimeInput initialTime="13:37" />;
+    it('should call the "onChange" prop when using a default input', () => {
+        const onChange = jest.fn();
+        const { container } = setup({
+            initialTime: '13:37',
+            onChange,
+        });
 
-        expect(shallow(component).containsMatchingElement(<input value="13:37" />)).toBe(true);
-    });
-
-    it('should call the "onChange" prop when using a default input and passed one', () => {
-        const onChange = ({ event, value }) => {
-            expect(event).toBeTruthy();
-            expect(value).toBe('13:37');
-        };
-
-        const component = (
-            <TimeInput
-                onChange={ onChange }
-                initialTime="13:37"
-            />
-        );
-
-        const event = {
-            target: {
-                value: '13:37',
-            },
-        };
-
-        shallow(component).find('input').simulate('change', event);
-    });
-
-    it('should call the "onChange" prop when using a custom input and passed one', () => {
-        const onChange = ({ event, value }) => {
-            expect(event).toBeTruthy();
-            expect(value).toBe('14:00');
-        };
-
-        const component = (
-            <TimeInput
-                input={
-                    <input type="time" />
-                }
-                initialTime="13:37"
-                onChange={ onChange }
-            />
-        );
-
-        const event = {
+        fireEvent.change(container.firstChild, {
             target: {
                 value: '14:00',
             },
-        };
+        });
 
-        shallow(component).find('input').simulate('change', event);
+        expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:00');
+    });
+
+    it('should call the "onChange" prop when using a custom input', () => {
+        const onChange = jest.fn();
+        const { container } = setup({
+            initialTime: '13:37',
+            input: <input type="time" />,
+            onChange,
+        });
+
+        fireEvent.change(container.firstChild, {
+            target: {
+                value: '14:00',
+            },
+        });
+
+        expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:00');
     });
 
     it('should pass on other props when using a default input', () => {
-        const component = (
-            <TimeInput
-                initialTime="13:37"
-                placeholder="HH:MM"
-            />
-        );
+        const { container } = setup({
+            initialTime: '13:37',
+            placeholder: 'HH:MM',
+        });
 
-        expect(shallow(component).containsMatchingElement(<input placeholder="HH:MM" />)).toBe(true);
+        expect(container).toMatchSnapshot();
     });
 
     it('should pass on other props when using a custom input', () => {
-        const component = (
-            <TimeInput
-                input={ <input type="time" /> }
-                initialTime="13:37"
-                name="foo"
-            />
-        );
+        const { container } = setup({
+            initialTime: '13:37',
+            input: <input type="time" />,
+            name: 'foo',
+        });
 
-        expect(shallow(component).containsMatchingElement(
-            <input
-                type="time"
-                name="foo"
-            />,
-        )).toBe(true);
+        expect(container).toMatchSnapshot();
     });
 
     it('should add the separator when only given an hour', () => {
-        const onChange = ({ value }) => {
-            expect(value).toBe('14:');
-        };
+        const onChange = jest.fn();
+        const { container } = setup({
+            initialTime: '13:37',
+            onChange,
+        });
 
-        const component = (
-            <TimeInput
-                input={
-                    <input type="time" />
-                }
-                initialTime="14:15"
-                onChange={ onChange }
-            />
-        );
-
-        const event = {
+        fireEvent.change(container.firstChild, {
             target: {
                 value: '14',
             },
-        };
+        });
 
-        shallow(component).find('input').simulate('change', event);
+        expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:');
     });
 });

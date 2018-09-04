@@ -1,6 +1,6 @@
 const isValidMinute = (minute) => Number.isInteger(minute) && minute >= 0 && minute < 60;
 const isValidHour = (hour) => Number.isInteger(hour) && hour >= 0 && hour < 24;
-const regexp = /^\d{0,2}?:?\d{0,2}$/;
+const regexp = /^\d{0,2}?:?\d{0,2}$/u;
 
 const isValid = (value) => {
     if (!regexp.test(value)) {

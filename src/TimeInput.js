@@ -15,29 +15,26 @@ class TimeInput extends PureComponent {
     handleChange (event) {
         const { onChange } = this.props;
         const lastValue = this.state.value;
-        let newValue = event.target.value;
+        let { value } = event.target;
 
-        if (newValue === lastValue || !isValid(newValue)) {
+        if (value === lastValue || !isValid(value)) {
             return;
         }
 
-        if (newValue.length === 2 && lastValue.length !== 3 && !newValue.includes(':')) {
-            newValue = `${newValue}:`;
+        if (value.length === 2 && lastValue.length !== 3 && !value.includes(':')) {
+            value = `${value}:`;
         }
 
-        if (newValue.length === 2 && lastValue.length === 3) {
-            newValue = newValue.slice(0, 1);
+        if (value.length === 2 && lastValue.length === 3) {
+            value = value.slice(0, 1);
         }
 
         this.setState({
-            value: newValue,
+            value,
         });
 
         if (onChange) {
-            onChange({
-                event,
-                value: newValue,
-            });
+            onChange(event, value);
         }
     }
 

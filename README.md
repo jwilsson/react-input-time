@@ -26,6 +26,9 @@ const App = () => (
     <TimeInput
         className="input-time"
         initialTime="13:37"
+        onChange={(event, value) => {
+
+        }}
     />
 );
 

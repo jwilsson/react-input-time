@@ -93,4 +93,20 @@ describe('TimeInput', () => {
 
         expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:');
     });
+
+    it('should not call the "onChange" prop when passed something invalid', () => {
+        const onChange = jest.fn();
+        const { container } = setup({
+            initialTime: '13:37',
+            onChange,
+        });
+
+        fireEvent.change(container.firstChild, {
+            target: {
+                value: 'invalid',
+            },
+        });
+
+        expect(onChange).not.toHaveBeenCalled();
+    });
 });

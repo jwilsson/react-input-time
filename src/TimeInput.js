@@ -4,13 +4,9 @@ import PropTypes from 'prop-types';
 import isValid from './utils/isValid';
 
 class TimeInput extends PureComponent {
-    constructor (props) {
-        super(props);
-
-        this.state = {
-            value: this.props.initialTime,
-        };
-    }
+    state = {
+        value: this.props.initialTime,
+    };
 
     handleChange (event) {
         const { onChange } = this.props;

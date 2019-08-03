@@ -27,8 +27,8 @@
     "react-testing-library": "^5.0.0"
   },
   "peerDependencies": {
-    "react": "^15.5.4 || ^16.1.1",
-    "react-dom": "^15.5.4 || ^16.1.1"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "scripts": {
     "build": "babel -d dist src",

@@ -8,7 +8,7 @@ class TimeInput extends PureComponent {
         value: this.props.initialTime,
     };
 
-    handleChange (event) {
+    handleChange = (event) => {
         const { onChange } = this.props;
         const { value } = this.state;
 
@@ -33,7 +33,7 @@ class TimeInput extends PureComponent {
         if (onChange) {
             onChange(event, newValue);
         }
-    }
+    };
 
     render () {
         // eslint-disable-next-line no-unused-vars

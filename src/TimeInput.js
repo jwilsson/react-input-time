@@ -10,27 +10,28 @@ class TimeInput extends PureComponent {
 
     handleChange (event) {
         const { onChange } = this.props;
-        const lastValue = this.state.value;
-        let { value } = event.target;
+        const { value } = this.state;
 
-        if (value === lastValue || !isValid(value)) {
+        let newValue = event.target.value;
+
+        if (newValue === value || !isValid(newValue)) {
             return;
         }
 
-        if (value.length === 2 && lastValue.length !== 3 && !value.includes(':')) {
-            value = `${value}:`;
+        if (newValue.length === 2 && value.length !== 3 && !newValue.includes(':')) {
+            newValue = `${newValue}:`;
         }
 
-        if (value.length === 2 && lastValue.length === 3) {
-            value = value.slice(0, 1);
+        if (newValue.length === 2 && value.length === 3) {
+            newValue = newValue.slice(0, 1);
         }
 
         this.setState({
-            value,
+            value: newValue,
         });
 
         if (onChange) {
-            onChange(event, value);
+            onChange(event, newValue);
         }
     }
 
@@ -42,17 +43,17 @@ class TimeInput extends PureComponent {
         if (input) {
             return React.cloneElement(input, {
                 ...props,
-                onChange: (e) => this.handleChange(e),
+                onChange: this.handleChange,
                 value,
             });
         }
 
         return (
             <input
-                { ...props }
-                onChange={ (e) => this.handleChange(e) }
+                {...props}
+                onChange={this.handleChange}
                 type="text"
-                value={ value }
+                value={value}
             />
         );
     }

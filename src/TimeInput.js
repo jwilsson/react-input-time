@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import isValid from './utils/isValid';
+import getNewValue from './utils/getNewValue';
 
 class TimeInput extends PureComponent {
     state = {
@@ -12,26 +12,16 @@ class TimeInput extends PureComponent {
         const { onChange } = this.props;
         const { value } = this.state;
 
-        let newValue = event.target.value;
+        const newValue = getNewValue(value, event.target.value);
 
-        if (newValue === value || !isValid(newValue)) {
-            return;
-        }
+        if (newValue) {
+            this.setState({
+                value: newValue,
+            });
 
-        if (newValue.length === 2 && value.length !== 3 && !newValue.includes(':')) {
-            newValue = `${newValue}:`;
-        }
-
-        if (newValue.length === 2 && value.length === 3) {
-            newValue = newValue.slice(0, 1);
-        }
-
-        this.setState({
-            value: newValue,
-        });
-
-        if (onChange) {
-            onChange(event, newValue);
+            if (onChange) {
+                onChange(event, newValue);
+            }
         }
     };
 

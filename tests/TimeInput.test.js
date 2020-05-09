@@ -78,22 +78,6 @@ describe('TimeInput', () => {
         expect(container).toMatchSnapshot();
     });
 
-    it('should add the separator when only given an hour', () => {
-        const onChange = jest.fn();
-        const { container } = setup({
-            initialTime: '13:37',
-            onChange,
-        });
-
-        fireEvent.change(container.firstChild, {
-            target: {
-                value: '14',
-            },
-        });
-
-        expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:');
-    });
-
     it('should not call the "onChange" prop when passed something invalid', () => {
         const onChange = jest.fn();
         const { container } = setup({

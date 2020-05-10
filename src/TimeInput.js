@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import getNewValue from './utils/getNewValue';
 
-// eslint-disable-next-line no-unused-vars
 const TimeInput = ({ initialTime, input, onChange, ...props }) => {
     const [value, setValue] = useState(initialTime);
     const handleChange = (event) => {

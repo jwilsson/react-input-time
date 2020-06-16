@@ -48,4 +48,4 @@ All other props will be passed straight through to the rendered DOM element.
 
 # Acknowledgments
 
-Originally based on logic from https://github.com/dima-bu/react-input-time, but heavily stripped down.
+Originally based on logic from https://github.com/dima-bu/react-time-input, but heavily stripped down.

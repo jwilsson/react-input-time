@@ -1,6 +1,6 @@
 {
   "name": "react-input-time",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple, yet customizable, React component for time selection.",
   "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
   "main": "dist/TimeInput.js",

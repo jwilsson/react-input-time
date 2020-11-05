@@ -32,7 +32,6 @@
   },
   "scripts": {
     "build": "babel -d dist src",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src",
     "prepublish": "npm run build",
     "pretest": "npm run lint",

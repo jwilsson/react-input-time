@@ -1,7 +1,7 @@
 # react-input-time
 
 [![npm](https://img.shields.io/npm/v/react-input-time.svg)](https://www.npmjs.com/package/react-input-time)
-[![Build Status](https://travis-ci.org/jwilsson/react-input-time.svg?branch=master)](https://travis-ci.org/jwilsson/react-input-time)
+![build](https://github.com/jwilsson/react-input-time/workflows/build/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/jwilsson/react-input-time/badge.svg?branch=master)](https://coveralls.io/r/jwilsson/react-input-time?branch=master)
 
 A simple, yet customizable, React component for time selection.

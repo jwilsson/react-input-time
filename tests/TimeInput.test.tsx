@@ -1,11 +1,11 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 
-import TimeInput from '../src/TimeInput';
+import TimeInput, { Props } from '../src/TimeInput';
 
 afterEach(cleanup);
 
-const setup = (props) => render(<TimeInput {...props} />);
+const setup = (props: Props) => render(<TimeInput {...props} />);
 
 describe('TimeInput', () => {
     it('should render a text input with default props', () => {
@@ -33,7 +33,7 @@ describe('TimeInput', () => {
             onChange,
         });
 
-        fireEvent.change(container.firstChild, {
+        fireEvent.change(container.firstChild!, {
             target: {
                 value: '14:00',
             },
@@ -50,7 +50,7 @@ describe('TimeInput', () => {
             onChange,
         });
 
-        fireEvent.change(container.firstChild, {
+        fireEvent.change(container.firstChild!, {
             target: {
                 value: '14:00',
             },
@@ -85,7 +85,7 @@ describe('TimeInput', () => {
             onChange,
         });
 
-        fireEvent.change(container.firstChild, {
+        fireEvent.change(container.firstChild!, {
             target: {
                 value: 'invalid',
             },

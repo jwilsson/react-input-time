@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "checkJs": false,
+        "declaration": true,
+        "esModuleInterop": true,
+        "jsx": "react",
+        "module": "commonjs",
+        "strict": true,
+        "target": "esnext",
+    },
+    "include": ["src/**/*"],
+}

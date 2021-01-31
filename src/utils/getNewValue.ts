@@ -1,6 +1,6 @@
 import isValid from './isValid';
 
-const getNewValue = (prevValue, newValue) => {
+const getNewValue = (prevValue: string, newValue: string): string => {
     if (newValue === prevValue || !isValid(newValue)) {
         return '';
     }

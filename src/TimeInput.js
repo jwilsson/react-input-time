@@ -12,7 +12,7 @@ const TimeInput = ({ initialTime, input, onChange, ...props }) => {
             setValue(newValue);
 
             if (onChange) {
-                onChange(event, newValue);
+                onChange(event);
             }
         }
     };

@@ -31,7 +31,7 @@ const App = () => (
   <TimeInput
     className="input-time"
     initialTime="13:37"
-    onChange={(event, value) => {}}
+    onChange={(event) => {}}
   />
 );
 
@@ -42,7 +42,7 @@ ReactDOM.render(<App />, document.querySelector('.app'));
 
 - `initialTime`: The initial time value, required.
 - `input`: A custom `<input>` element to use instead of the default one.
-- `onChange`: onChange handler, will be passed the new value and the complete `SyntheticEvent` object.
+- `onChange`: onChange handler, will be passed a complete `SyntheticEvent` object.
 
 All other props will be passed straight through to the rendered DOM element.
 

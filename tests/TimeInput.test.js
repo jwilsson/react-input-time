@@ -39,7 +39,7 @@ describe('TimeInput', () => {
             },
         });
 
-        expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:00');
+        expect(onChange).toHaveBeenCalledWith(expect.any(Object));
     });
 
     it('should call the "onChange" prop when using a custom input', () => {
@@ -56,7 +56,7 @@ describe('TimeInput', () => {
             },
         });
 
-        expect(onChange).toHaveBeenCalledWith(expect.any(Object), '14:00');
+        expect(onChange).toHaveBeenCalledWith(expect.any(Object));
     });
 
     it('should pass on other props when using a default input', () => {

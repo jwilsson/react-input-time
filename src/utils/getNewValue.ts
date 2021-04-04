@@ -5,7 +5,11 @@ const getNewValue = (prevValue: string, newValue: string): string => {
         return '';
     }
 
-    if (newValue.length === 2 && prevValue.length !== 3 && !newValue.includes(':')) {
+    if (
+        newValue.length === 2 &&
+        prevValue.length !== 3 &&
+        !newValue.includes(':')
+    ) {
         newValue = `${newValue}:`;
     }
 

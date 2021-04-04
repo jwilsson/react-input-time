@@ -9,9 +9,9 @@ import PropTypes from 'prop-types';
 import getNewValue from './utils/getNewValue';
 
 export interface Props extends ComponentPropsWithoutRef<'input'> {
-    initialTime: string,
-    input?: ReactElement,
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void,
+    initialTime: string;
+    input?: ReactElement;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TimeInput = ({ initialTime, input, onChange, ...props }: Props) => {
@@ -37,12 +37,7 @@ const TimeInput = ({ initialTime, input, onChange, ...props }: Props) => {
     }
 
     return (
-        <input
-            {...props}
-            onChange={handleChange}
-            type="text"
-            value={value}
-        />
+        <input {...props} onChange={handleChange} type="text" value={value} />
     );
 };
 

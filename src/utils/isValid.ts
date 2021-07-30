@@ -14,8 +14,8 @@ const isValid = (value: string): boolean => {
     }
 
     const parts = value.split(':');
-    const hourString = parts[0] || '';
-    const minuteString = parts[1] || '';
+    const hourString = parts[0] ?? '';
+    const minuteString = parts[1] ?? '';
     const hours = parseInt(hourString) || 0;
     const minutes = parseInt(minuteString) || 0;
 

@@ -33,11 +33,13 @@ describe('TimeInput', () => {
             onChange,
         });
 
-        fireEvent.change(container.firstChild!, {
-            target: {
-                value: '14:00',
-            },
-        });
+        if (container.firstChild) {
+            fireEvent.change(container.firstChild, {
+                target: {
+                    value: '14:00',
+                },
+            });
+        }
 
         expect(onChange).toHaveBeenCalledWith(expect.any(Object));
     });
@@ -50,11 +52,13 @@ describe('TimeInput', () => {
             onChange,
         });
 
-        fireEvent.change(container.firstChild!, {
-            target: {
-                value: '14:00',
-            },
-        });
+        if (container.firstChild) {
+            fireEvent.change(container.firstChild, {
+                target: {
+                    value: '14:00',
+                },
+            });
+        }
 
         expect(onChange).toHaveBeenCalledWith(expect.any(Object));
     });
@@ -85,11 +89,13 @@ describe('TimeInput', () => {
             onChange,
         });
 
-        fireEvent.change(container.firstChild!, {
-            target: {
-                value: 'invalid',
-            },
-        });
+        if (container.firstChild) {
+            fireEvent.change(container.firstChild, {
+                target: {
+                    value: 'invalid',
+                },
+            });
+        }
 
         expect(onChange).not.toHaveBeenCalled();
     });

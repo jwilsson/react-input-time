@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "tsc --outDir dist",
-    "lint": "eslint src/**/*.{ts,tsx} && tsc --noEmit",
+    "lint": "eslint src tests",
     "prepublish": "npm run build",
     "pretest": "npm run lint",
     "test:watch": "jest --coverage --watch",

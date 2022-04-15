@@ -43,7 +43,7 @@ const TimeInput: FC<Props> = ({ initialTime, input, onChange, ...props }) => {
 
 TimeInput.propTypes = {
     initialTime: PropTypes.string.isRequired,
-    input: PropTypes.node,
+    input: PropTypes.element,
     onChange: PropTypes.func,
 };
 

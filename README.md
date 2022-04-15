@@ -8,7 +8,7 @@ A simple, yet customizable, React component for time selection.
 
 # Install
 
-_Requires React 16.8 or later_
+_Requires React 17 or later_
 
 ```sh
 npm install --save react-input-time

@@ -1,22 +1,22 @@
-import React, {
-    ChangeEvent,
-    ComponentPropsWithoutRef,
-    ReactElement,
-    useState,
-} from 'react';
 import PropTypes from 'prop-types';
-
+import type { FC } from 'react';
+import React, {
+    useState,
+    type ChangeEvent,
+    type ComponentPropsWithoutRef,
+    type ReactElement,
+} from 'react';
 import getNewValue from './utils/getNewValue';
 
-export interface Props extends ComponentPropsWithoutRef<'input'> {
+export type Props = ComponentPropsWithoutRef<'input'> & {
     initialTime: string;
     input?: ReactElement;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-}
+};
 
-const TimeInput = ({ initialTime, input, onChange, ...props }: Props) => {
+const TimeInput: FC<Props> = ({ initialTime, input, onChange, ...props }) => {
     const [value, setValue] = useState(initialTime);
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         const newValue = getNewValue(value, event.target.value);
 
         if (newValue) {

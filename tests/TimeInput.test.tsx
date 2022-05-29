@@ -1,11 +1,15 @@
+import {
+    cleanup,
+    fireEvent,
+    render,
+    type RenderResult,
+} from '@testing-library/react';
 import React from 'react';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-
-import TimeInput, { Props } from '../src/TimeInput';
+import TimeInput, { type Props } from '../src/TimeInput';
 
 afterEach(cleanup);
 
-const setup = (props: Props) => render(<TimeInput {...props} />);
+const setup = (props: Props): RenderResult => render(<TimeInput {...props} />);
 
 describe('TimeInput', () => {
     it('should render a text input with default props', () => {

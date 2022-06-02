@@ -22,6 +22,7 @@
         "@jwilsson/prettier-config": "^7.1.0",
         "@jwilsson/tsconfig": "^1.1.0",
         "@testing-library/react": "^13.0.0",
+        "@types/jest": "^27.5.2",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
         "coveralls": "^3.0.2",
@@ -40,12 +41,12 @@
         "react-dom": "^17.0.0 | ^18.0.0"
     },
     "scripts": {
-        "build": "tsc --outDir dist",
+        "build": "tsc",
         "lint": "eslint src tests",
         "prepublish": "npm run build",
         "pretest": "npm run lint",
-        "test:watch": "jest --coverage --watch",
-        "test": "jest --coverage"
+        "test:watch": "jest --watch",
+        "test": "jest"
     },
     "babel": {},
     "simple-git-hooks": {

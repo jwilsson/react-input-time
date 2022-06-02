@@ -22,7 +22,7 @@
         "@jwilsson/prettier-config": "^7.1.0",
         "@jwilsson/tsconfig": "^1.1.0",
         "@testing-library/react": "^13.0.0",
-        "@types/jest": "^27.5.2",
+        "@types/jest": "^28.1.0",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
         "coveralls": "^3.0.2",
